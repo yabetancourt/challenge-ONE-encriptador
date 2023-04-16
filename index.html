@@ -1,41 +1,66 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="es-es">
 
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
+  <title>Encriptador</title>
+  <meta name="description" content="Encriptador sencillo">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+<header>
+  <img src="./img/logo.svg" alt="logo" id="logo">
+</header>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+<div class="encrypt-box">
+  <form action="">
+    <div class="label-info">
+      <img src="img/warning.svg" alt="importante" id="imgInfo">
+      <label class="info" for="input-text">Solo letras minúsculas y sin acentos</label>
+    </div>
+    <input class="text-input" type="text" name="input-text" id="input-text" placeholder="Ingrese el texto aquí">
+    <div id="buttons">
+      <input type="button" value="Encriptar" id="btn-encrypt">
+      <input type="button" value="Desencriptar" id="btn-decrypt">
+    </div>
+  </form>
+</div>
+
+<!--Sección del texto Resultado-->
+<div class="decrypt-box" id="decrypt-box">
+
+  <div id="person-image">
+    <picture>
+      <source srcset="./img/person.svg" media="screen and (max-width : 400px)">
+      <img src="./img/person.svg" id="image" class="img" alt = "Persona">
+    </picture>
+    <p class="no-decrypt-text"><strong>Ningún mensaje fue encontrado</strong></p>
+    <p class="decrypt-text">Ingrese el texto que deseas encriptar o desencriptar</p>
+  </div>
+  <div id="copy-div">
+    <label for="msg"></label><input class="text-output" type="text" id="msg" readonly>
+    <input type="button" value="Copiar" id="btn-copy">
+  </div>
+
+</div>
+
+<footer>
+  <p><a href="https://www.linkedin.com/in/yabetancourt/">Yadier Betancourt Martínez</a></p>
+</footer>
+
+<script src="./js/main.js"></script>
+
 </body>
 
 </html>
